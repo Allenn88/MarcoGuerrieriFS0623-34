@@ -1,0 +1,13 @@
+sistemare le infomazioni (posso renderlo dinamico mandando il nome della cittá direttametrne come titolo)
+tutte le info con le icone le puoi mettere in un div con un border radius 100%
+previsioni per i prossimi giorni: le gif ti fanno perdeere la vista valutare se cambiarle con un img statica
+sistemare data 
+cambiare il vento in km/h
+aggiungere altri elementi:
+
+alba
+umiditá
+il deg nel wind
+
+
+puoi aggiungere un img per la cittá 
