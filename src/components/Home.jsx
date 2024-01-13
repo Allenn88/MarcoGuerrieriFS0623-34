@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./style/Home.css";
 
 const Home = () => {
   const [city, setCity] = useState("");
@@ -7,14 +8,21 @@ const Home = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (city.trim() !== "") {
+    if (validateCity(city)) {
       navigate(`/dettaglio?city=${encodeURIComponent(city)}`);
+    } else {
+      alert("Il nome della città non è valido. Inserisci solo caratteri alfabetici e spazi.");
     }
+  };
+
+  const validateCity = (input) => {
+    const regex = /^[a-zA-Z\s]+$/;
+    return regex.test(input.trim());
   };
 
   return (
     <div>
-      <h2>Ricerca Meteo</h2>
+      <h2 className="Title">Meteo</h2>
       <form onSubmit={handleSubmit}>
         <label>
           Inserisci il nome della città:
