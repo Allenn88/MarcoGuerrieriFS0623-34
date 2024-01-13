@@ -40,13 +40,14 @@ const Previsioni = () => {
           {forecastData.list.map((item, index) => (
             <div
               key={index}
-              className={`previsioni-row ${item.weather && item.weather[0] ? item.weather[0].main.toLowerCase() : ''}`}
+              className={`text-center previsioni-row ${item.weather && item.weather[0] ? item.weather[0].main.toLowerCase() : ''}`}
             >
               <p><i class="bi bi-calendar"></i> {item.dt_txt}</p>
               {item.main && (
                 <>
                   <p><i class="bi bi-thermometer-high"></i> {(item.main.temp_max - gradiC).toFixed(2)}°C</p>
                   <p><i class="bi bi-thermometer-half"></i> {(item.main.temp_min - gradiC).toFixed(2)}°C</p>
+                  <p><i class="bi bi-droplet-fill"></i>{(item.main.humidity)}%</p>
                 </>
               )}
               {item.weather && item.weather[0] && (

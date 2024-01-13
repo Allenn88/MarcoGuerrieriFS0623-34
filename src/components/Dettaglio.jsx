@@ -49,6 +49,7 @@ const WeatherComponent = () => {
             <div>
               <p><i className="bi bi-thermometer-high"></i> {(weatherData.main.temp_max - gradiC).toFixed(2)}°C</p>
               <p><i className="bi bi-thermometer-half"></i> {(weatherData.main.temp_min - gradiC).toFixed(2)}°C</p>
+              <p><i class="bi bi-droplet-fill"></i>{(weatherData.main.humidity)}%</p>
             </div>
           )}
         </div>
@@ -58,8 +59,8 @@ const WeatherComponent = () => {
           )}
           {weatherData.wind && (
             <div>
-              <p><i className="bi bi-wind"></i> {weatherData.wind.speed}</p>
-              <p><i className="bi bi-tornado"></i> {weatherData.wind.gust}</p>
+              <p><i className="bi bi-wind"></i> { (weatherData.wind.speed * 3.6).toFixed(2) } km/h</p>
+              <p><i className="bi bi-tornado"></i> {weatherData.wind.gust * 3.6}</p>
             </div>
           )}
         </div>
